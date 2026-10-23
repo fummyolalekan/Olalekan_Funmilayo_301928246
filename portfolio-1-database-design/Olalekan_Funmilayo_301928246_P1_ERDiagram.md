@@ -21,7 +21,7 @@ erDiagram
         INTEGER stock_quantity
     }
 
-    ORDER {
+    CUSTOMER_ORDER {
         BIGINT order_id PK
         BIGINT customer_id FK
         DATE order_date
@@ -42,8 +42,8 @@ erDiagram
         NUMERIC amount
     }
 
-    CUSTOMER ||--o{ ORDER : places
+    CUSTOMER ||--o{ CUSTOMER_ORDER : places
     CATEGORY ||--o{ PRODUCT : contains
-    ORDER ||--|{ ORDER_ITEM : includes
+    CUSTOMER_ORDER ||--|{ ORDER_ITEM : includes
     PRODUCT ||--o{ ORDER_ITEM : appears_in
-    ORDER o|--|| PAYMENT : paid_by
+    CUSTOMER_ORDER ||--o| PAYMENT : paid_bygit diff --check
