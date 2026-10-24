@@ -1,3 +1,4 @@
+```mermaid
 erDiagram
     direction LR
 
@@ -46,4 +47,5 @@ erDiagram
     CATEGORY ||--o{ PRODUCT : contains
     CUSTOMER_ORDER ||--|{ ORDER_ITEM : includes
     PRODUCT ||--o{ ORDER_ITEM : appears_in
-    CUSTOMER_ORDER ||--o| PAYMENT : paid_bygit diff --check
+    CUSTOMER_ORDER ||--o| PAYMENT : paid_by
+```
