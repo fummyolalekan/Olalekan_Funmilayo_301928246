@@ -21,3 +21,47 @@ Register a customer account; add or update a product; manage product stock level
 
 ## Scope
 The database covers customer accounts, product catalogue management, inventory tracking, orders and payments using fictional data. It excludes product reviews, discount codes, supplier management, delivery tracking integration, user authentication mechanisms and financial accounting functions.
+
+## Design and implementation files
+
+| File | Contents |
+|------|----------|
+| [Olalekan_Funmilayo_301928246_P1_Design.md](Olalekan_Funmilayo_301928246_P1_Design.md) | Database design, entities, attributes, keys, relationships, and business rules. |
+| [Olalekan_Funmilayo_301928246_P1_ERDiagram.md](Olalekan_Funmilayo_301928246_P1_ERDiagram.md) | Mermaid ER diagram and relationship explanations. |
+| [Olalekan_Funmilayo_301928246_P1_Normalisation.md](Olalekan_Funmilayo_301928246_P1_Normalisation.md) | 1NF, 2NF, and 3NF normalisation process with examples. |
+| [Olalekan_Funmilayo_301928246_P1_Schema.sql](Olalekan_Funmilayo_301928246_P1_Schema.sql) | PostgreSQL schema containing tables, primary keys, foreign keys, unique constraints, and checks. |
+| [Screenshots/](Screenshots/) | Screenshots showing schema creation, data insertion, constraint testing, and query results. |
+
+## Implementation
+
+The database was implemented in PostgreSQL using the database **fashion_accessories_portfolio**. The schema contains six tables: `customer`, `category`, `product`, `order`, `order_item`, and `payment`. Primary keys use generated identity values, while foreign keys enforce relationships between related records.
+
+The schema script was executed first, followed by sample data inserts and constraint tests. The tests checked unique constraints, foreign key constraints, NOT NULL requirements, payment restrictions, and other validation rules defined in the schema. Screenshots of the execution and results were saved in the `Screenshots` folder.
+
+## Test results
+
+The tests showed that valid records were inserted successfully into all tables. Constraint tests correctly rejected invalid data, including duplicate customer emails, duplicate category names, missing required customer names, invalid category references, negative values, and duplicate payment records for the same order. These results confirm that the implemented primary keys, foreign keys, unique constraints, and check constraints are operating as expected.
+
+The final row-count query returned the following results:
+
+| Table | Rows |
+|--------|------|
+| category | 3 |
+| customer | 2 |
+| product | 3 |
+| order | 3 |
+| order_item | 3 |
+| payment | 2 |
+
+Screenshots saved in the `Screenshots` folder include schema creation, table listing, successful data inserts, constraint tests, foreign key tests, payment tests, and final record-count verification. Examples include:
+- `Olalekan_Funmilayo_301928246_P1_SchemaCommit.png`
+- `Olalekan_Funmilayo_301928246_P1_TableList.png`
+- `Olalekan_Funmilayo_301928246_P1_TestForeignKey.png`
+- `Olalekan_Funmilayo_301928246_P1_TestUniqueEmail.png`
+- `Olalekan_Funmilayo_301928246_P1_TestRequiredName.png`
+- `Olalekan_Funmilayo_301928246_P1_TestNegativePrice.png`
+- `Olalekan_Funmilayo_301928246_P1_TestPaymentLimit.png`
+
+**Reference**
+
+PostgreSQL Documentation
